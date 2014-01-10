@@ -1,14 +1,13 @@
 Summary:	Task manager for XFCE Desktop
 Name:		xfce4-taskmanager
-Version:	1.0.0
-Release:	4
+Version:	1.0.1
+Release:	1
 License:	GPL v2
 Group:		Applications
 Source0:	http://archive.xfce.org/src/apps/xfce4-taskmanager/1.0/%{name}-%{version}.tar.bz2
-# Source0-md5:	cd205366ae771d2cbe72b5ca7b1257b0
+# Source0-md5:	b8a707b25e32c1a296eb50d609aa49b8
 Patch0:		%{name}-libtool.patch
 Patch1:		%{name}-desktop.patch
-Patch2:		%{name}-bashizm.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtk+-devel
@@ -25,7 +24,6 @@ Task manager for XFCE.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -45,7 +43,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
 
 %find_lang %{name}
 
