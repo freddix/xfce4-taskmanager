@@ -1,7 +1,7 @@
 Summary:	Task manager for XFCE Desktop
 Name:		xfce4-taskmanager
 Version:	1.0.1
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications
 Source0:	http://archive.xfce.org/src/apps/xfce4-taskmanager/1.0/%{name}-%{version}.tar.bz2
